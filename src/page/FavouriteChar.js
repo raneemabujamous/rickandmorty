@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import styles from "./Card.module.scss";
 import { useSelector, useDispatch } from "react-redux";
-import { addToFavourites, removeFromFav } from "../../src/store/action";
+import { removeFromFav } from "../../src/store/action";
 import "../App.css";
 import { HeartSwitch } from "@anatoliygatt/heart-switch";
 
@@ -12,7 +12,7 @@ export default function FavouriteChar({ data, page }) {
   const dispatch = useDispatch();
   const favaourite = useSelector((state) => state.favourites);
   console.log(favaourite, "favaouritefavaourite");
-
+  console.log(setChecked);
   return (
     <>
       <div className="container">
@@ -21,7 +21,7 @@ export default function FavouriteChar({ data, page }) {
             <div className="row">
               {favaourite ? (
                 favaourite.map((x) => {
-                  let { id, image, name, status, location, species } = x;
+                  let { id, image, name, status, location } = x;
 
                   return (
                     <div

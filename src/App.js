@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { GET_ALL_CHARACTERS } from "./graphQuery/query";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap";
 import Filters from "./component/FillterCard/Filtter";

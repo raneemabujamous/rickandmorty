@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./Card.module.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { HeartSwitch } from "@anatoliygatt/heart-switch";
@@ -15,7 +15,7 @@ export default function Card({ data, page }) {
     <>
       {data ? (
         data.map((x) => {
-          let { id, image, name, status, location, species } = x;
+          let { id, image, name, status, location } = x;
 
           return (
             <div
@@ -36,11 +36,11 @@ export default function Card({ data, page }) {
                   </div>
                   <HeartSwitch
                     checked={
-                      (checked.checked && id == checked.id) ||
-                      checked.favaourite?.find((a) => a.id == id)
+                      (checked.checked && id === checked.id) ||
+                      checked.favaourite?.find((a) => a.id === id)
                     }
                     onChange={(event) => {
-                      if (favaourite?.find((a) => a.id == id)) {
+                      if (favaourite?.find((a) => a.id === id)) {
                         console.log("find IN fav");
                         favaourite = favaourite.filter((a) => a.id !== id);
                         dispatch(removeFromFav(x));
